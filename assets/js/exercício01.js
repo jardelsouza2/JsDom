@@ -7,11 +7,12 @@ function simuladorSalario (){
 
     var nomeVendedor = document.getElementById('nomeVendedor').value; //captura a valor (nome) digitado //
     var totalVendas = document.getElementById('totalVendas').value;
-    var mensagemSucesso = document.getElementById('mensagemSucesso');
+    
 
-    if(totalVendas > META_VENDA){
+    if(totalVendas >= META_VENDA){
         var salarioBruto = SALARIO_COMERCIAL + (totalVendas * PERCENTUAL_COMISSAO);
-        mensagemSucesso.className = 'row visible'; 
+        var comissao = (totalVendas * PERCENTUAL_COMISSAO);
+        exibirMensagemResultado(nomeVendedor, salarioBruto, comissao);
     }
     /*
     <div class="col-sm-12 col-md-9 col-lg-9 pt-30">
@@ -25,11 +26,13 @@ function simuladorSalario (){
     console.log('Total de vendas: ' + totalVendas);
     console.log('salario bruto: ' + salarioBruto);
 }
-function exibirMensagemResultado(nome, salario, comissao, tipoMensagem){
+function exibirMensagemResultado(nome, salario, comissao){
     let html = '<div class="col-sm-12 col-md-9 col-lg-9 pt-30">' + 
                      '<div class="alert alert-success" role="alert">' + 
-                        '<h4>A simple success alert with</h4>' + 
+                        '<h4>' + nome + ', seu salario bruto será de R$: ' + salario +'reias.<br> Voce recebou R$' + comissao + 'reais de comissao.</h4>' + 
                     '</div>'    +
                 '</div>';
-
+                var mensagemResultado = document.getElementById('mensagemResultado');
+                    mensagemSucesso.className = 'row visible'; 
+                    mensagemResultado.innerhtml = html;
 }
