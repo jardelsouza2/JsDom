@@ -131,16 +131,13 @@
                         <input id="totalVendas" type="number" class="form-control">
                     </div>
                     <div class="col-sm-12 col-md-2 col-lg-2 pt-30">
-                        <button class="btn btn-success">Sumilar</button>
+                        <button type="button" class="btn btn-success" onclick="simuladorSalario()">Simular</button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-9 col-lg-9 pt-30">
-                        <div class="alert alert-success" role="alert">
-                            <h4>A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.</h4>
-                          </div>
+
+                    <div class="row invisible" id="mensagemSucesso">
+                        
                     </div>
-                </div>
                 </form>
             </main>
             <!--#endregion-->
@@ -152,6 +149,7 @@
     <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
     <!-- Icons -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="assets/js/exercício01.js"></script>
     <script>
         feather.replace()
     </script>
